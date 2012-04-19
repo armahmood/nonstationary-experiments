@@ -50,7 +50,7 @@ def main():
             t = clock()
             seed(1)
             prob = Nonstationary(sigma2_u=sigma2_u, a=a, sigma2_v=sigma2_v, sigma2_o1=sigma2_o1, sigma2_o2=sigma2_o2, n=M, o1s=o1s)
-            autostep = Autostep(w0=zeros(M), p=1.0, lmbda=10**-4, mu=mu, alpha=1.0/M)
+            autostep = Autostep(w0=zeros(M), lmbda=10**-4, mu=mu, alpha=1.0/M)
             w = zeros((M, N))
             mse = 0
             dev = 0

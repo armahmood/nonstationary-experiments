@@ -12,7 +12,7 @@ class Autostep(object):
     classdocs
     '''
 
-    def __init__(self, w0, p, lmbda, mu, alpha=None):
+    def __init__(self, w0, lmbda=10**-4, mu=0.01, alpha=None):
         '''
         w0 and alphainit should be column vectors 
         '''
@@ -25,7 +25,6 @@ class Autostep(object):
         self.__v = zeros(shape(self.__w))
         self.__h = zeros(shape(self.__w))
         self.__lambda = lmbda
-        self.__p = p
         
     def params(self):
         return self.__w, self.__v, self.__h
@@ -35,11 +34,11 @@ class Autostep(object):
         delta = yt - pred
         dxh = delta*multiply(xt, self.__h)
         x2 = multiply(xt, xt)
-        self.__v = maximum(abs(dxh)**self.__p, self.__v + self.__lambda*self.__alpha*x2*(abs(dxh)**self.__p - self.__v))
+        self.__v = maximum(abs(dxh), self.__v + self.__lambda*self.__alpha*x2*(abs(dxh) - self.__v))
         v = self.__v
         bnum = multiply(self.__mu*dxh, v>0)
         v[v==0.0] = 1
-        alphaprime = self.__alpha*exp(bnum/(v**(1.0/self.__p)))
+        alphaprime = self.__alpha*exp(bnum/(v))
         ## but, should be interpreted with beta
         self.__alpha = maximum(alphaprime/maximum(1, 0.5*dot(alphaprime, x2)), 10**-20)
         adx = multiply(self.__alpha, xt) * delta
@@ -47,7 +46,7 @@ class Autostep(object):
         ax2 = multiply(self.__alpha, x2)
         self.__h = multiply(self.__h, 1-ax2) + adx
         
-        return {'pred':pred, 'w':self.__w, 'alpha':self.__alpha, 'h':self.__h, 'dxh':dxh, 'm':self.__v, 'ax2': ax2, 'metastep':self.__mu/(v**(1/self.__p))}
+        return {'pred':pred, 'w':self.__w, 'alpha':self.__alpha, 'h':self.__h, 'dxh':dxh, 'm':self.__v, 'ax2': ax2, 'metastep':self.__mu/(v)}
     
     class Factory(PredictorFactory):
         

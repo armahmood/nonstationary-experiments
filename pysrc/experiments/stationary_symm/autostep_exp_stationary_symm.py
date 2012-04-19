@@ -45,7 +45,7 @@ def main():
             t = clock()
             seed(1)
             prob = StationaryProb(sigma2_u1=sigma2_u1, sigma2_u2=sigma2_u2, sigma2_v=sigma2_v, n=M, nofu1s=nofu1s)
-            autostep = Autostep(w0=zeros(M), p=1.0, lmbda=10**-4, mu=mu, alpha=1.0/(M*sigma2_u1))
+            autostep = Autostep(w0=zeros(M), lmbda=10**-4, mu=mu, alpha=1.0/(M*sigma2_u1))
             w = zeros((M, N))
             mse = 0
             dev = 0

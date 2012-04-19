@@ -46,7 +46,7 @@ def main():
     for run in range(nruns):
         for mu in mus:
             t = clock()
-            autostep = Autostep(w0=zeros(M), p=1.0, lmbda=10**-4, mu=mu, alpha=1.0/(M*sigma2_u1))
+            autostep = Autostep(w0=zeros(M), lmbda=10**-4, mu=mu, alpha=1.0/(M*sigma2_u1))
             w = zeros((M, N))
             mse = 0
             dev = 0
