@@ -43,7 +43,7 @@ def main():
     xlim([10**-4, 1])
     ylim([0, 2])
     xscale("log")
-    xlabel("tunable parameter", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())
+    xlabel("tunable parameter", fontsize=utils.getxlabelsize())
     ylabel("RMSE", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())
     
 if __name__ == '__main__':

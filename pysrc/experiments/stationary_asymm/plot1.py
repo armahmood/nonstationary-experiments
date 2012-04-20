@@ -22,7 +22,7 @@ def main():
     utils.setsizes()
     
     params, data = dataload(dir=loaddir+"lms/"+probdir, paramfile="stepsizes.txt")
-    ymax = data[params==0.001]
+    ymax = 1#data[params==0.001]
     plot(params, data/ymax, label="LMS")
 
     #params, data = dataload(dir=loaddir+"bmp/"+probdir, paramfile="metastepsizes.txt")
@@ -39,10 +39,10 @@ def main():
 
     legend(loc='lower left')
     xlim([10**-4, 1])
-    ylim([0, 1.2])
+    ylim([0, 2])
     xscale("log")
-    xlabel("tunable parameter", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())
-    ylabel("$S$ (MSE relative to best LMS)", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())
+    xlabel("tunable parameter", fontsize=utils.getxlabelsize())
+    ylabel("RMSE", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())
 
 if __name__ == '__main__':
     main()

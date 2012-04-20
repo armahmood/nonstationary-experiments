@@ -52,7 +52,7 @@ def main():
     xlim([10**-11, 1])
     ylim([0, 1.2])
     xscale("log")
-    xlabel("tunable parameter", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())
+    xlabel("tunable parameter", fontsize=utils.getxlabelsize())
     ylabel("$S$ (RMSE relative to best LMS)", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())
 
 if __name__ == '__main__':
