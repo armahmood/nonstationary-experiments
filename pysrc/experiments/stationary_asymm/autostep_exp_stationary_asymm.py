@@ -5,7 +5,7 @@ Created on Jan 21, 2012
 '''
 
 import sys
-sys.path.append("../../../")
+sys.path.append("../../")
 
 from numpy import *
 from numpy.random import *
@@ -26,7 +26,7 @@ def main():
     N = 25000
     to = N/2
     nofu1s = M/4
-    nruns = 2
+    nruns = 50
     sigma2_u2 = 1.0
     sigma2_v = 1.0
     if len(sys.argv)>1:

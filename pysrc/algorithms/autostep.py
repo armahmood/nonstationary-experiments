@@ -40,7 +40,7 @@ class Autostep(object):
         v[v==0.0] = 1
         alphaprime = self.__alpha*exp(bnum/(v))
         ## but, should be interpreted with beta
-        self.__alpha = maximum(alphaprime/maximum(1, 0.5*dot(alphaprime, x2)), 10**-20)
+        self.__alpha = maximum(alphaprime/maximum(1, dot(alphaprime, x2)), 10**-20)
         adx = multiply(self.__alpha, xt) * delta
         self.__w = self.__w + adx
         ax2 = multiply(self.__alpha, x2)

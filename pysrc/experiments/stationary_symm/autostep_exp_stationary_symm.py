@@ -5,7 +5,7 @@ Created on Jan 21, 2012
 '''
 
 import sys
-sys.path.append("../../../")
+sys.path.append("../../")
 
 from numpy import *
 from numpy.random import *
@@ -63,7 +63,7 @@ def main():
                     
             mses[mu==mus, run==array(range(nruns))] = mse
             print "run" + str(run) + ": " + str(clock() - t) + "sec"
-        #savetxt(savedir + dirname+"/run"+str(run)+".txt", sqrt(mses[:,run]))
+        savetxt(savedir + dirname+"/run"+str(run)+".txt", sqrt(mses[:,run]))
     print sqrt(mean(mses, 1))
     savetxt(savedir + dirname+"/avg_rmse.txt", sqrt(mean(mses, 1)))
     if display==True:

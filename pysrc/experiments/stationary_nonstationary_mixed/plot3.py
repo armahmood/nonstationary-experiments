@@ -38,7 +38,7 @@ def main():
 
     legend(loc='lower left')
     xlim([10**-11, 1])
-    ylim([0, 140])
+    ylim([0, 500])
     xscale("log")
     xlabel("tunable parameter", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())
     ylabel("RMSE", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())

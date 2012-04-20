@@ -5,7 +5,7 @@ Created on Jan 21, 2012
 '''
 
 import sys
-sys.path.append("../../../")
+sys.path.append("../../")
 
 from numpy import *
 from numpy.random import *
@@ -41,7 +41,7 @@ def main():
     alphas = array([10**-7, 10**-6, 10**-5, 10**-4, 10**-3, 2*10**-3, 5*10**-3, 10**-2, 2*10**-2, 5*10**-2, 10**-1])
     mses = zeros((len(alphas), nruns))
     savedir = "../../../data/lms/"
-    dirname = "prob.nonstat.s2u."+str(sigma2_u)+".a."+str(a)+".s2v."+str(sigma2_v)+".s2o1."+str(sigma2_o1)+".s2o1."+str(sigma2_o2)+".m."+str(M)+".o1s."+str(o1s)+".N."+str(N)
+    dirname = "prob.s2u."+str(sigma2_u)+".a."+str(a)+".s2v."+str(sigma2_v)+".s2o1."+str(sigma2_o1)+".s2o1."+str(sigma2_o2)+".m."+str(M)+".o1s."+str(o1s)+".N."+str(N)
     if not os.path.exists(savedir + dirname):
         os.makedirs(savedir + dirname)
     savetxt(savedir + dirname + "/stepsizes.txt", alphas)

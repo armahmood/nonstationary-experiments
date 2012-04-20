@@ -5,7 +5,7 @@ Created on Jan 21, 2012
 '''
 
 import sys
-sys.path.append("../../../")
+sys.path.append("../../")
 
 from numpy import *
 from numpy.random import *
@@ -41,7 +41,7 @@ def main():
     mus = array([10**-12, 10**-7, 10**-4, 10**-3, 2*10**-3, 5*10**-3, 10**-2, 2*10**-2, 5*10**-2, 10**-1, 2*10**-1, 5*10**-1, 1.0])
     mses = zeros((len(mus), nruns))
     savedir = "../../../data/autostep/"
-    dirname = "prob.nonstat.s2u."+str(sigma2_u)+".a."+str(a)+".s2v."+str(sigma2_v)+".s2o1."+str(sigma2_o1)+".s2o1."+str(sigma2_o2)+".m."+str(M)+".o1s."+str(o1s)+".N."+str(N)
+    dirname = "prob.s2u."+str(sigma2_u)+".a."+str(a)+".s2v."+str(sigma2_v)+".s2o1."+str(sigma2_o1)+".s2o1."+str(sigma2_o2)+".m."+str(M)+".o1s."+str(o1s)+".N."+str(N)
     if not os.path.exists(savedir + dirname):
         os.makedirs(savedir + dirname)
     savetxt(savedir + dirname + "/metastepsizes.txt", mus)

@@ -5,7 +5,7 @@ Created on Jan 21, 2012
 '''
 
 import sys
-sys.path.append("../../../")
+sys.path.append("../../")
 
 from numpy import *
 from numpy.random import *
