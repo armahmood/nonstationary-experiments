@@ -37,7 +37,7 @@ def main():
     plot(params, data/ymax, label="RLS")
 
     legend(loc='lower left')
-    xlim([10**-11, 1])
+    xlim([10**-9, 1])
     ylim([0, 5])
     xscale("log")
     xlabel("tunable parameter", fontsize=utils.getxlabelsize())

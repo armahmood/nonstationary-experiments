@@ -49,8 +49,8 @@ def main():
     plot(params, (data1/ymax1 + data2/ymax2)/2.0, label="RLS")
 
     legend(loc='lower left')
-    xlim([10**-11, 1])
-    ylim([0, 1.2])
+    xlim([10**-9, 1])
+    ylim([0.6, 1.2])
     xscale("log")
     xlabel("tunable parameter", fontsize=utils.getxlabelsize())
     ylabel("$S$ (RMSE relative to best LMS)", fontsize=utils.getxlabelsize(), labelpad=utils.getxlabelpadsize())
